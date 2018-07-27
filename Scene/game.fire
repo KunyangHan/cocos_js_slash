@@ -811,7 +811,7 @@
     ],
     "_prefab": null,
     "_id": "903udnQXdOuYOSX3T/Djub",
-    "_opacity": 255,
+    "_opacity": 0,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,

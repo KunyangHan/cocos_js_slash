@@ -56,6 +56,21 @@ cc.Class({
             this.dispatch(event, true)
             this.on = false
         }, this)
+        this.canvas.on(cc.Node.EventType.TOUCH_START, function(event) {
+            this.timeStart = new Date().getTime()
+            this.on = true
+            
+            this.dispatch(event, false)
+        }, this)
+        this.canvas.on(cc.Node.EventType.TOUCH_MOVE, function(event) {
+            if (!this.on)
+                return
+            this.dispatch(event, false)
+        }, this)
+        this.canvas.on(cc.Node.EventType.TOUCH_END, function(event) {
+            this.dispatch(event, true)
+            this.on = false
+        }, this)
     },
 
     // update (dt) {},

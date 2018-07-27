@@ -35,6 +35,7 @@ cc.Class({
         move : null,
         calLength : null,
         posStart : null,
+        timeStart : null,
         targetPos : null,
         length : null,
         anchorX : 960,
@@ -109,22 +110,29 @@ cc.Class({
     release (detail) {
         if (playerConfig.coolDown > 0 || config.Pause)
             return
-        playerConfig.unDead = playerConfig.unDeadTime
-        playerConfig.coolDown = playerConfig.coolDownTime
-        this.time2Length(detail.time)
-        // console.log(detail)
+        if (Math.abs(detail.pos.x - this.posStart.x) > 10) {
+            playerConfig.unDead = playerConfig.unDeadTime
+            playerConfig.coolDown = playerConfig.coolDownTime
+            this.time2Length(detail.time)
+            this.fixData(detail.pos)
+            this.move.setUserData(this.targetPos)
+            this.skill(this.targetPos, this.length, 50)
+            this.node.dispatchEvent(this.move)
+        }
+        console.log(detail.time)
         
-        this.fixData(detail.pos)
-        this.move.setUserData(this.targetPos)
-        this.skill(this.targetPos, this.length, 50)
-        this.node.dispatchEvent(this.move)
+        this.instructor.setOpacity(0)
+        this.timeStart = -1
     },
 
     instruct (detail) {
-        if (detail.time == 0)
+        if (detail.time == 0){
             this.posStart = detail.pos
+            this.timeStart = new Date().getTime()
+        }
         // console.log("pos :" + detail.pos)
         
+        this.instructor.setOpacity(255)
         this.time2Length(detail.time)
         this.fixData(detail.pos)
         var ori = this.player.getPosition()
@@ -139,11 +147,13 @@ cc.Class({
     // onLoad () {},
 
     start () {
+        this.timeStart = -1
         this.move = new cc.Event.EventCustom('move', true)
         this.line = this.instructor.getChildByName('line')
         this.node.on('slay', function(event) {
-            if (event.detail.release == true)
+            if (event.detail.release == true){
                 this.release(event.getUserData())
+            }
             else{
                 this.instruct(event.getUserData())
                 // event.stopPropagation()
@@ -156,5 +166,9 @@ cc.Class({
             return
         playerConfig.coolDown -= playerConfig.coolDown > 0 ? dt : 0
         playerConfig.unDead -= playerConfig.unDead > 0 ? dt : 0
+        if (this.timeStart >= 0) {
+            this.time2Length(new Date().getTime() - this.timeStart)
+            this.line.setContentSize(this.calLength, 3)
+        }
     },
 });
