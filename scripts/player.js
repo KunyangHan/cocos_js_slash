@@ -39,21 +39,6 @@ cc.Class({
         length : 600,
         anchorX : 960,
         anchorY : 540,
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
     },
 
     init () {
@@ -63,14 +48,14 @@ cc.Class({
         this.anim = this.render.getComponent(cc.Animation)
     },
 
-    world2canvas (ori) {
-        ori.x -= this.anchorX
-        ori.y -= this.anchorY
-        return ori
-    },
+    // world2canvas (ori) {
+    //     ori.x -= this.anchorX
+    //     ori.y -= this.anchorY
+    //     return ori
+    // },
 
     towards (target) {
-        target  = this.world2canvas(target)
+        // target  = this.world2canvas(target)
         var ori = this.player.getPosition()
         var dealtY = target.y - ori.y
         var dealtX = target.x - ori.x
@@ -82,56 +67,74 @@ cc.Class({
         }
     },
 
-    where2Go (target) {
-        target  = this.world2canvas(target)
-        var ori = this.player.getPosition()
-        var arc = Math.atan((target.y - ori.y) / (target.x - ori.x))
-        var offsetX = Math.abs(this.length * Math.cos(arc))
-        var offsetY = Math.abs(this.length * Math.sin(arc))
+    // where2Go (target) {
+    //     target  = this.world2canvas(target)
+    //     var ori = this.player.getPosition()
+    //     var arc = Math.atan((target.y - ori.y) / (target.x - ori.x))
+    //     var offsetX = Math.abs(this.length * Math.cos(arc))
+    //     var offsetY = Math.abs(this.length * Math.sin(arc))
         
-        ori.x += ori.x < target.x ? offsetX : -offsetX
-        ori.y += ori.y < target.y ? offsetY : -offsetY
-        return this.legalize(ori)
+    //     ori.x += ori.x < target.x ? offsetX : -offsetX
+    //     ori.y += ori.y < target.y ? offsetY : -offsetY
+    //     return this.legalize(ori)
+    // },
+
+    // legalize(pos) {
+    //     pos.x = pos.x < -this.anchorX ? -this.anchorX : pos.x
+    //     pos.x = pos.x > this.anchorX ? this.anchorX : pos.x
+    //     pos.y = pos.y < -this.anchorY ? -this.anchorY : pos.y
+    //     pos.y = pos.y > this.anchorY ? this.anchorY : pos.y
+    //     return pos
+    // },
+
+    // skill (to, len, wid) {
+    //     var ori = this.player.getPosition()
+    //     var ang = Math.atan((to.y - ori.y) / (to.x - ori.x)) * 180 / Math.PI
+    //     var node  = cc.instantiate(this.slay)
+    //     node.parent = this.player
+    //     ang = to.x < ori.x ? -ang : 180 - ang;
+    //     node.setRotation(ang)
+    //     node.setContentSize(len, wid)
+    //     node.setPosition(0, 0)
+    //     var collider = node.getComponent(cc.BoxCollider)
+    //     collider.offset.x = len / 2
+    //     collider.offset.y = 0
+    //     collider.size = new cc.size(len, wid)
+    // },
+
+    adjustPos (to) {
+        var x = 13
+        switch (to) {
+            case 'left':
+            case 'down':
+                x = 13
+                break
+            case 'up':
+                x = 42
+                break
+            case 'right':
+                x = 57
+                break
+        }
+        this.render.setPosition(x, 0)
     },
 
-    legalize(pos) {
-        pos.x = pos.x < -this.anchorX ? -this.anchorX : pos.x
-        pos.x = pos.x > this.anchorX ? this.anchorX : pos.x
-        pos.y = pos.y < -this.anchorY ? -this.anchorY : pos.y
-        pos.y = pos.y > this.anchorY ? this.anchorY : pos.y
-        return pos
-    },
-
-    skill (to) {
-        var ori = this.player.getPosition()
-        var ang = Math.atan((to.y - ori.y) / (to.x - ori.x)) * 180 / Math.PI
-        var node  = cc.instantiate(this.slay)
-        node.parent = this.player
-        ang = to.x < ori.x ? -ang : 180 - ang;
-        node.setRotation(ang)
-        node.setPosition(0, 0)
-    },
-
-    slaying (event) {
-        var pos = this.where2Go(event.getLocation())
-        var to = this.towards(event.getLocation())
-        this.skill(pos)
-        this.player.setPosition(pos.x, pos.y)
+    slaying (pos) {
+        this.length = 400
+        var to = this.towards(pos)
         cc.audioEngine.play(this.audio, false, 1)
-        this.anim.play("melee_" + to)
+        this.anim.play("sword_melee_" + to)
+        this.adjustPos(to)
+        // console.log(pos);
+        
+        this.player.setPosition(pos.x, pos.y)
     },
 
     // LIFE-CYCLE CALLBACKS:
     onLoad () {
         this.init()
-        this.canvas.on(cc.Node.EventType.MOUSE_DOWN, function(event) {
-            console.log(event.getLocation())
-            
-            if (playerConfig.coolDown > 0)
-                return
-            playerConfig.unDead = playerConfig.unDeadTime
-            playerConfig.coolDown = playerConfig.coolDownTime
-            this.slaying(event)
+        this.node.on('move', function(event) {
+            this.slaying(event.detail)
         }, this)
     },
 
@@ -139,10 +142,5 @@ cc.Class({
         // cc.loader.loadRes("")
     },
 
-    update (dt) {
-        if (config.Pause)
-            return
-        playerConfig.coolDown -= playerConfig.coolDown > 0 ? dt : 0
-        playerConfig.unDead -= playerConfig.unDead > 0 ? dt : 0
-    },
+    // update (dt) {},
 });

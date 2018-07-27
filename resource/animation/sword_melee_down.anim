@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "sword_melee_down",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.5166666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "0b3140f1-fa9a-41a6-a7af-c9550458c65e"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "c67b72e3-27d6-4e44-a551-dad0011eaaa5"
+            }
+          },
+          {
+            "frame": 0.11666666666666667,
+            "value": {
+              "__uuid__": "adde9154-60b3-4aef-8fa9-3a438f3185cb"
+            }
+          },
+          {
+            "frame": 0.18333333333333332,
+            "value": {
+              "__uuid__": "218124e3-8e8e-4d16-b92b-61eeffc03c0c"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "cfff5511-0b50-484c-8b43-bf0d553b4817"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

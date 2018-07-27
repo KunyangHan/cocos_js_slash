@@ -74,7 +74,7 @@ cc.Class({
        config.KillScore += 10 ;
         this.current = cc.audioEngine.play(this.audio, false, 1);
         // console.log('发生碰撞！');
-        console.log(config.KillScore);
+        // console.log(config.KillScore);
         
         this.enemy.destroy();
     },

@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "sword_melee_up",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.5166666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "a1e6d241-dc73-4809-a56a-3aff28f5d0fe"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "7bd64795-7e1f-44cc-9558-12e1b2ef120a"
+            }
+          },
+          {
+            "frame": 0.11666666666666667,
+            "value": {
+              "__uuid__": "96baf4e3-2386-48f5-a5f5-1674a05fdcf1"
+            }
+          },
+          {
+            "frame": 0.18333333333333332,
+            "value": {
+              "__uuid__": "057a148d-809c-449c-80b7-16fa8587fc23"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "1eeafbb5-286a-481c-94e3-077f14f6873f"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

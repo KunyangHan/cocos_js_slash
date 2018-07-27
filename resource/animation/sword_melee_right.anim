@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "sword_melee_right",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.5166666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "64c763fc-c497-4344-a3e6-b39e5a810fc4"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "74898ecb-9a96-4cbf-afe6-840ff9786ae3"
+            }
+          },
+          {
+            "frame": 0.11666666666666667,
+            "value": {
+              "__uuid__": "b84911b2-5486-445e-a803-ba2ae740eb85"
+            }
+          },
+          {
+            "frame": 0.18333333333333332,
+            "value": {
+              "__uuid__": "eefad8b4-ac81-48e6-bd4b-fe8625fcadd5"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "a345a501-0bf2-4cee-b38e-516e82935392"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

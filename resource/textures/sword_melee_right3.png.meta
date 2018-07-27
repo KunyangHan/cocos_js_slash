@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "823dc869-c28f-4887-98d8-f9a8d6093687",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "sword_melee_right3": {
+      "ver": "1.0.3",
+      "uuid": "b84911b2-5486-445e-a803-ba2ae740eb85",
+      "rawTextureUuid": "823dc869-c28f-4887-98d8-f9a8d6093687",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 174,
+      "height": 97,
+      "rawWidth": 174,
+      "rawHeight": 97,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
