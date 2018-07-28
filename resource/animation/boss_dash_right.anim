@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "boss_dash_right",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.23333333333333334,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "c3bf9779-7025-4e8b-a6ce-7e4dc79e371f"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "913c4f6a-074d-4d74-ae4c-1e58d3b4eb7a"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "7c67d2e2-0e97-4051-833a-0f1ee4df281c"
+            }
+          },
+          {
+            "frame": 0.21666666666666667,
+            "value": {
+              "__uuid__": "de8a5d73-c7c4-4574-9ed6-46c969c13338"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

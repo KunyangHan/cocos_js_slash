@@ -1,0 +1,61 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "insect_downleft",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.5166666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "e40dc9ad-5bfd-49f8-a4b1-fa4ea33594c2"
+            }
+          },
+          {
+            "frame": 0.08333333333333333,
+            "value": {
+              "__uuid__": "21d04347-3b72-47bb-a317-fb78072afc82"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "61defaf7-cdc6-4b8c-84eb-f48b0343659f"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "747ab873-82c6-470d-8b73-0cb1eac32676"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "efe78e1d-a6af-40b4-bd80-efdd4db666fc"
+            }
+          },
+          {
+            "frame": 0.4166666666666667,
+            "value": {
+              "__uuid__": "9947fe38-5357-43ff-a41d-855ab50ed2d3"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "e40dc9ad-5bfd-49f8-a4b1-fa4ea33594c2"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

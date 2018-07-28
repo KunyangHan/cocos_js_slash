@@ -1,0 +1,61 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "witchCast_Upleft",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1.0166666666666666,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "47a89deb-baaa-49fe-8355-0644ac752111"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "ece82f02-0ad5-4095-970c-21b2ee34dff6"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "e606022a-45d5-4a5a-8f25-1d0506ee0e23"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "f8a1971a-d8a0-4625-89bb-e272ee6de2db"
+            }
+          },
+          {
+            "frame": 0.6666666666666666,
+            "value": {
+              "__uuid__": "16795be7-8835-4730-88b1-5e9cfc0bee6a"
+            }
+          },
+          {
+            "frame": 0.8333333333333334,
+            "value": {
+              "__uuid__": "fabdc0a7-5402-4f9f-879f-52bf50923af0"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "47a89deb-baaa-49fe-8355-0644ac752111"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

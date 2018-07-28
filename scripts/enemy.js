@@ -1,4 +1,5 @@
 var config = require("Config");
+var enemyconfig = require("enemyConfig");
 cc.Class({
     extends: cc.Component,
     properties: {
@@ -71,11 +72,11 @@ cc.Class({
         this.oriented = "aa";
     },
     onCollisionEnter: function (other, self){
-       config.KillScore += 10 ;
+        config.KillScore += 10 ;
         this.current = cc.audioEngine.play(this.audio, false, 1);
         // console.log('发生碰撞！');
-        // console.log(config.KillScore);
-        
+        //console.log(config.KillScore);
+        enemyconfig.enemyNumber--;
         this.enemy.destroy();
     },
 });

@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "boss_dead",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.8833333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "60a31cbd-c54e-4594-b763-3ad572e63ee8"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "a740e9aa-ddd3-4b67-a1c0-cb08067b2425"
+            }
+          },
+          {
+            "frame": 0.5833333333333334,
+            "value": {
+              "__uuid__": "c000f502-ccf2-42a4-8914-96c677410ac3"
+            }
+          },
+          {
+            "frame": 0.75,
+            "value": {
+              "__uuid__": "18956e85-f206-42c4-8312-c0a18546c12f"
+            }
+          },
+          {
+            "frame": 0.8666666666666667,
+            "value": {
+              "__uuid__": "f7893105-ffe3-4312-bccf-b10a7b7dd45e"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

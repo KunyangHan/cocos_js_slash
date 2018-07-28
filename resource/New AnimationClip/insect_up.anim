@@ -1,0 +1,61 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "insect_up",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.5166666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "6ab0bffb-b5d6-4efb-8e6b-a1305d399e0b"
+            }
+          },
+          {
+            "frame": 0.08333333333333333,
+            "value": {
+              "__uuid__": "0bfc50a2-3970-44d9-81a9-70b967b19f03"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "2aa4078f-977b-4724-9f3c-c09f8231dd0f"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "fedf344f-b675-43d4-8dc9-2d291c4b6bc6"
+            }
+          },
+          {
+            "frame": 0.3333333333333333,
+            "value": {
+              "__uuid__": "0a132c88-8416-46f4-80e7-f16c84ec9f60"
+            }
+          },
+          {
+            "frame": 0.4166666666666667,
+            "value": {
+              "__uuid__": "58803468-bd5a-47b4-b210-9b79c3ca8ac5"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "6ab0bffb-b5d6-4efb-8e6b-a1305d399e0b"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
