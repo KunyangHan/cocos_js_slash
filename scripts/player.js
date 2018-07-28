@@ -36,12 +36,14 @@ cc.Class({
         render : null,
         anim : null,
         frame : null,
+        alive : true,
         length : 600,
         anchorX : 960,
         anchorY : 540,
     },
 
     init () {
+        this.alive = true
         this.player = this.canvas.getChildByName("player")
         this.render = this.player.getChildByName("render")
         this.sprite = this.render.getComponent(cc.Sprite)
@@ -142,5 +144,10 @@ cc.Class({
         // cc.loader.loadRes("")
     },
 
-    // update (dt) {},
+    update (dt) {
+        if (playerConfig.touched && this.alive){
+            this.anim.play('player_dead')
+            this.alive = false
+        }
+    },
 });

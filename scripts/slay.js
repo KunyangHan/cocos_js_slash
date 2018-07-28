@@ -22,12 +22,15 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
+    say(a) {
+        console.log(a)
+    },
 
     start () {
         // this.target.setScaleX
         this.target.runAction(cc.fadeOut(0.2))
         setTimeout(function () {
-            this.target.destroy();
+            this.target.destroy()
           }.bind(this), 200);
     },
 

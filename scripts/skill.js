@@ -42,15 +42,13 @@ cc.Class({
         anchorY : 540,
     },
     
-    world2canvas (ori) {
-        ori.x -= this.anchorX
-        ori.y -= this.anchorY
+    canvas2world (ori) {
+        ori.x += this.anchorX
+        ori.y += this.anchorY
         return ori
     },
     
     legalize(pos) {
-        console.log(pos)
-        
         pos.x = pos.x < -this.anchorX ? -this.anchorX : pos.x
         pos.x = pos.x > this.anchorX ? this.anchorX : pos.x
         pos.y = pos.y < -this.anchorY ? -this.anchorY : pos.y
@@ -59,7 +57,6 @@ cc.Class({
     },
 
     where2Go (target) {
-        // target  = this.world2canvas(target)
         var ori = this.player.getPosition()
         var arc = Math.atan((target.y - this.posStart.y) / (target.x - this.posStart.x))
         var offsetX = Math.abs(this.calLength * Math.cos(arc))
@@ -71,12 +68,12 @@ cc.Class({
     },
 
     time2Length (time) {
-        if (time < 1000)
-            this.calLength = 400 + 0.2 * time
-        else if (time < 3000)
-            this.calLength = 600 + 0.1 * time
+        if (time < 500)
+            this.calLength = 600 + 0.4 * time
+        else if (time < 1500)
+            this.calLength = 800 + 0.2 * time
         else 
-            this.calLength = 800
+            this.calLength = 1000
     },
 
     calLen (player, target) {
@@ -96,8 +93,9 @@ cc.Class({
         var ang = Math.atan((to.y - ori.y) / (to.x - ori.x)) * 180 / Math.PI
         var node  = cc.instantiate(this.slay)
         node.parent = this.player
-        ang = to.x < ori.x ? -ang : 180 - ang;
-        node.setRotation(ang)        
+        ang = to.x < ori.x ? -ang : 180 - ang
+        // node.getComponent(cc._Script).say('ssssss')
+        node.setRotation(ang)
         node.setContentSize(len, wid)
         node.setPosition(0, 0)
         var collider = node.getComponent(cc.BoxCollider)
@@ -107,19 +105,24 @@ cc.Class({
         cc.audioEngine.play(this.audio, false, 1)
     },
 
+    modeCheck (pos) {
+        if (Math.abs(pos.x - this.posStart.x) < 50 && Math.abs(pos.y - this.posStart.y) < 50) {
+            this.posStart = this.canvas2world(this.player.getPosition())
+        }
+    },
+
     release (detail) {
         if (playerConfig.coolDown > 0 || config.Pause)
             return
-        if (Math.abs(detail.pos.x - this.posStart.x) > 10) {
-            playerConfig.unDead = playerConfig.unDeadTime
-            playerConfig.coolDown = playerConfig.coolDownTime
-            this.time2Length(detail.time)
-            this.fixData(detail.pos)
-            this.move.setUserData(this.targetPos)
-            this.skill(this.targetPos, this.length, 50)
-            this.node.dispatchEvent(this.move)
-        }
-        console.log(detail.time)
+        this.modeCheck(detail.pos)
+
+        playerConfig.unDead = playerConfig.unDeadTime
+        playerConfig.coolDown = playerConfig.coolDownTime
+        this.time2Length(detail.time)
+        this.fixData(detail.pos)
+        this.move.setUserData(this.targetPos)
+        this.skill(this.targetPos, this.length, 50)
+        this.node.dispatchEvent(this.move)
         
         this.instructor.setOpacity(0)
         this.timeStart = -1
@@ -131,7 +134,8 @@ cc.Class({
             this.timeStart = new Date().getTime()
         }
         // console.log("pos :" + detail.pos)
-        
+        if (detail.time < 100)
+            return
         this.instructor.setOpacity(255)
         this.time2Length(detail.time)
         this.fixData(detail.pos)

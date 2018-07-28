@@ -788,7 +788,10 @@
       "__id__": 15
     },
     "_enabled": true,
-    "manager": null
+    "manager": null,
+    "audio": {
+      "__uuid__": "385410cc-b61b-4ca5-aaa9-47a8661db750"
+    }
   },
   {
     "__type__": "cc.Node",
@@ -995,7 +998,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 57,
+      "x": 13,
       "y": 0
     },
     "_skewX": 0,
@@ -1014,7 +1017,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "a345a501-0bf2-4cee-b38e-516e82935392"
+      "__uuid__": "cfff5511-0b50-484c-8b43-bf0d553b4817"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1054,6 +1057,9 @@
       },
       {
         "__uuid__": "6f6b681b-f56b-4327-9843-00a51a515103"
+      },
+      {
+        "__uuid__": "78f23eac-5dfe-4c34-9ef0-adca14db090f"
       }
     ],
     "playOnLoad": false
@@ -1126,6 +1132,7 @@
     "render": null,
     "anim": null,
     "frame": null,
+    "alive": true,
     "length": 600,
     "anchorX": 960,
     "anchorY": 540
@@ -1543,6 +1550,7 @@
     "move": null,
     "calLength": null,
     "posStart": null,
+    "timeStart": null,
     "targetPos": null,
     "length": null,
     "anchorX": 960,
@@ -1569,6 +1577,7 @@
     "render": null,
     "anim": null,
     "frame": null,
+    "alive": true,
     "length": 600,
     "anchorX": 960,
     "anchorY": 540

@@ -8,6 +8,7 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
+var playerConfig = require("playerConfig")
 
 cc.Class({
     extends: cc.Component,
@@ -28,6 +29,8 @@ cc.Class({
     },
 
     dispatch (event, rel) {
+        if (playerConfig.touched)
+            return
         this.detail.time = this.on ? new Date().getTime() - this.timeStart : 0
         this.detail.pos = new cc.Vec2(event.getLocation().x, event.getLocation().y)
         this.detail.release = rel

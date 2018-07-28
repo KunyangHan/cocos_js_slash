@@ -15,6 +15,10 @@ cc.Class({
 
     properties: {
         manager : null,
+        audio : {
+            default : null,
+            url : cc.AudioClip,
+        },
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -33,8 +37,12 @@ cc.Class({
     },
 
     onCollisionEnter: function (other, self) {
-        if (PlayerConfig.unDead <= 0) {
-            
+        if (PlayerConfig.unDead <= 0 && !PlayerConfig.dead) {
+            cc.audioEngine.play(this.audio, false, 1)
+            PlayerConfig.touched = true
+            setTimeout(function () {
+                PlayerConfig.dead = true
+            }, 2000);
         }
     },
 
